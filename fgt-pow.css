@@ -1,0 +1,337 @@
+/* ===================================== */
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ===================================== */
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #0B0703;
+  color: #EBE5D9;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: #E5B84A;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #D98A1C;
+}
+
+/* ===================================== */
+/* HERO SECTION */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+#hero-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-bg-pfp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6) blur(3px);
+  box-shadow: 0 0 100px #E5B84A80, 0 0 50px #D98A1C80;
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  color: #E5B84A;
+  text-shadow: 0 0 15px #E5B84A, 0 0 25px #D98A1C;
+}
+
+.hero-content p {
+  margin-top: 10px;
+  font-size: 1.2rem;
+  color: #EBE5D9;
+}
+
+.enter-btn {
+  margin-top: 20px;
+  padding: 12px 30px;
+  border: 2px solid #E5B84A;
+  background: transparent;
+  color: #E5B84A;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.enter-btn:hover {
+  background: #D98A1C;
+  border-color: #D98A1C;
+  color: #0B0703;
+}
+
+/* ===================================== */
+/* FLOATING ICONS */
+.hero-floating-icons {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.floating-icon {
+  position: absolute;
+  font-size: 1.5rem;
+  color: #E5B84A;
+  animation: float 6s infinite ease-in-out;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+
+  50% {
+    transform: translateY(-20px) rotate(15deg);
+  }
+}
+
+/* ===================================== */
+/* FADE-IN SECTIONS */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================================== */
+/* ABOUT ME */
+#about {
+  padding: 80px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-container {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-text {
+  max-width: 600px;
+  color: #EBE5D9;
+}
+
+.about-text p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.about-img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 70px #E5B84A80, 0 0 40px #D98A1C80;
+}
+
+/* ===================================== */
+/* DASHBOARD / SKILLS */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 50px;
+  justify-items: center;
+}
+
+.skill-card {
+  background: #1A1A1A;
+  border: 1px solid #E5B84A50;
+  border-radius: 15px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s;
+  box-shadow: 0 0 20px #E5B84A50;
+  width: 220px;
+}
+
+.skill-card h3 {
+  color: #E5B84A;
+  margin-bottom: 10px;
+}
+
+.skill-card p {
+  color: #EBE5D9;
+  font-size: 0.95rem;
+}
+
+/* ===================================== */
+/* POW GALLERY */
+#gallery-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1500px;
+  padding: 50px;
+  position: relative;
+  min-height: 400px;
+  gap: 0;
+}
+
+.gallery-card {
+  width: 250px;
+  height: 350px;
+  border-radius: 15px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 0 50px #E5B84A50, 0 0 30px #D98A1C50;
+  position: absolute;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+  cursor: pointer;
+}
+
+.arrow-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: #E5B84A;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+  padding: 10px;
+}
+
+#prev {
+  left: 20px;
+}
+
+#next {
+  right: 20px;
+}
+
+.arrow-btn:hover {
+  color: #D98A1C;
+  transform: scale(1.2);
+}
+
+/* ===================================== */
+/* CONTACT SECTION */
+#contact {
+  padding: 80px 50px;
+  text-align: center;
+}
+
+#contact .neon-link {
+  display: inline-block;
+  margin: 10px 15px;
+  color: #E5B84A;
+  border-bottom: 1px solid #E5B84A50;
+  transition: 0.3s;
+}
+
+#contact .neon-link:hover {
+  color: #D98A1C;
+  border-color: #D98A1C;
+}
+
+/* ===================================== */
+/* FOOTER */
+footer {
+  padding: 50px;
+  text-align: center;
+  color: #EBE5D9;
+  border-top: 1px solid #E5B84A50;
+}
+
+/* ===================================== */
+/* NEON TEXT */
+.neon-text {
+  color: #E5B84A;
+  text-shadow: 0 0 5px #E5B84A, 0 0 10px #D98A1C, 0 0 20px #E5B84A, 0 0 40px #D98A1C;
+}
+
+/* ===================================== */
+/* RESPONSIVE */
+@media screen and (max-width: 1024px) {
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .dashboard-grid,
+  #gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+
+  .gallery-card {
+    width: 200px;
+    height: 280px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .enter-btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .gallery-card {
+    width: 160px;
+    height: 220px;
+  }
+}
