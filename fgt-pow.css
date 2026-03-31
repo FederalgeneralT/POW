@@ -68,6 +68,7 @@ a:hover {
   position: relative;
   z-index: 3;
   text-align: center;
+  margin-top: 200px;
 }
 
 .hero-content h1 {
@@ -98,6 +99,25 @@ a:hover {
   background: #D98A1C;
   border-color: #D98A1C;
   color: #0B0703;
+}
+
+.hero-content fade-in{
+  display: flex;
+  position: relative;
+} 
+
+i {
+  display: flex;
+  text-align: center;
+  margin-top: 150px;
+  font-size: 40px;
+  animation: bounce 1.5s infinite;
+  color: #E5B84A;
+}
+
+@keyframes bounce {
+  0%, 100%{transform: translateY(0);}
+  50% {transform: translateY(15px);}
 }
 
 /* ===================================== */
