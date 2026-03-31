@@ -101,23 +101,31 @@ a:hover {
   color: #0B0703;
 }
 
-.hero-content fade-in{
+/* Corrected selector for fade-in inside hero-content */
+.hero-content.fade-in {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   position: relative;
-} 
-
-i .fa-arrow-down{
-  display: flex;
-  text-align: center;
-  margin-top: 150px;
-  font-size: 40px;
-  animation: bounce 1.5s infinite;
-  color: #E5B84A;
 }
 
+/* Corrected arrow down selector */
+.hero-content .fa-arrow-down {
+  display: block;
+  margin-top: 30px;
+  font-size: 40px;
+  color: #E5B84A;
+  animation: bounce 1.5s infinite;
+}
+
+/* Bounce animation for arrow */
 @keyframes bounce {
-  0%, 100%{transform: translateY(0);}
-  50% {transform: translateY(15px);}
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
 }
 
 /* ===================================== */
@@ -138,12 +146,9 @@ i .fa-arrow-down{
 }
 
 @keyframes float {
-
-  0%,
-  100% {
+  0%, 100% {
     transform: translateY(0) rotate(0deg);
   }
-
   50% {
     transform: translateY(-20px) rotate(15deg);
   }
