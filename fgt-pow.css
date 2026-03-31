@@ -106,7 +106,7 @@ a:hover {
   position: relative;
 } 
 
-i {
+i .fa fa-arrow-down{
   display: flex;
   text-align: center;
   margin-top: 150px;
