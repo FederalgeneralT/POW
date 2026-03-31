@@ -24,7 +24,6 @@ class Particle {
   update() {
     this.x += this.speedX;
     this.y += this.speedY;
-
     if (this.x > width) this.x = 0;
     if (this.x < 0) this.x = width;
     if (this.y > height) this.y = 0;
@@ -112,9 +111,10 @@ showCard(currentIndex);
 galleryCards.forEach(card => {
   let floatDirection = 1;
   setInterval(() => {
-    const currentY = parseFloat(card.style.transform.match(/translateY\((-?\d+\.?\d*)px\)/)?.[1]) || 0;
+    const transform = card.style.transform;
+    const currentY = parseFloat(transform.match(/translateY\((-?\d+\.?\d*)px\)/)?.[1]) || 0;
     const newY = currentY + floatDirection * 0.3;
-    card.style.transform = card.style.transform.replace(/translateY\((-?\d+\.?\d*)px\)/, `translateY(${newY}px)`);
+    card.style.transform = transform.replace(/translateY\((-?\d+\.?\d*)px\)/, `translateY(${newY}px)`);
     if (Math.abs(newY) > 10) floatDirection *= -1;
   }, 50);
 });
@@ -143,4 +143,17 @@ heroPFP.addEventListener('mouseenter', () => {
 heroPFP.addEventListener('mouseleave', () => {
   heroPFP.style.transform = 'translate(-50%, -50%)';
   heroPFP.style.boxShadow = '0 0 100px #E5B84A80, 0 0 50px #D98A1C80';
+});
+
+/* ===================================== */
+/* ENTER BUTTON SCROLL TO GALLERY */
+const enterBtn = document.querySelector('.enter-btn');
+enterBtn.addEventListener('click', () => {
+  document.getElementById('pow-gallery').scrollIntoView({ behavior: 'smooth' });
+});
+
+/* DOWN ARROW CLICK SCROLL TO ABOUT */
+const downArrow = document.querySelector('.hero-content .fa-arrow-down');
+downArrow.addEventListener('click', () => {
+  document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
 });
